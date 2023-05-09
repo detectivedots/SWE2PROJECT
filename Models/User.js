@@ -1,3 +1,4 @@
+const UserAuthentication = require("./../Controllers/UserAuthentication.js");
 export default class User{
     constructor(id, name, email, password, phone) {
         const State = {
@@ -20,8 +21,14 @@ export default class User{
         throw new Error("Not Implemented");
         //TODO: Implement Logout
     }
-    static login(username, password){
-        // TODO: Call user controller for login
-        throw new Error("Not Implemented");
+    static async login(username, password){
+        let authentication = new UserAuthentication()
+        let loginSuccess = false
+        try {
+            loginSuccess = await authentication.login(username, password);
+        }catch (error){
+            console.log(error);
+            throw error;
+        }
     }
 }
