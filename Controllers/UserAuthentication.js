@@ -2,6 +2,9 @@ const dbController = require("./DatabaseController");
 
 class UserAuthentication {
     constructor() {
+        if (UserAuthentication.instance){
+            return UserAuthentication.instance;
+        }
         this.dbc = new dbController();
     }
 
@@ -53,5 +56,8 @@ class UserAuthentication {
         return results[0].password;
     }
 }
+
+const instance = new UserAuthentication();
+Object.freeze(instance);
 
 module.exports = UserAuthentication;
