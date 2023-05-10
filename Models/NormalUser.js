@@ -1,6 +1,6 @@
-import User from "./User";
+import User from './User.js';
 
-class NormalUser extends User {
+export default class NormalUser extends User {
     constructor(id, name, email, password, phone, approved, borrowLimit) {
         super(id, name, email, password, phone);
         this.approved = approved;

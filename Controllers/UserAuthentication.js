@@ -1,11 +1,10 @@
-const dbController = require("./DatabaseController");
-
+import DatabaseController from "./DatabaseController.js";
 class UserAuthentication {
     constructor() {
         if (UserAuthentication.instance){
             return UserAuthentication.instance;
         }
-        this.dbc = new dbController();
+        this.dbc = new DatabaseController();
     }
 
     async login(username, password){
@@ -60,4 +59,4 @@ class UserAuthentication {
 const instance = new UserAuthentication();
 Object.freeze(instance);
 
-module.exports = UserAuthentication;
+export default UserAuthentication

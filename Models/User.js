@@ -1,6 +1,6 @@
-const UserAuthentication = require("./../Controllers/UserAuthentication.js");
+import UserAuthentication from "../Controllers/UserAuthentication.js";
 export default class User{
-    constructor(id, name, email, password, phone) {
+    constructor(name, email, password, phone) {
         const State = {
             InActive: 0,
             Active: 1

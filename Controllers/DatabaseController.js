@@ -1,4 +1,4 @@
-const mysql = require('mysql');
+import mysql from 'mysql';
 
 class DatabaseController {
     constructor() {
@@ -54,4 +54,4 @@ class DatabaseController {
 const instance = new DatabaseController();
 Object.freeze(instance);
 
-module.exports = DatabaseController;
+export default DatabaseController
